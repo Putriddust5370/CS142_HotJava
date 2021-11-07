@@ -1,0 +1,131 @@
+Chapter 12 Homework
+
+Exercise 1
+	Encapsulate the deck-building code from Ch12.6 in a method called makeDeck that 
+
+		no parameters and returns a fully-populated array of Cards.
+
+	Okay. Done.
+
+Exercise 2
+	In some card games, Aces are ranked higher than Kings. Modify the compareTo method 
+
+		to implement this ordering.
+
+	Pretty sure it's just a matter of returning an Ace rank card as the highest.
+
+		Added 'and' so that it won't return if 1/-1 if both are Aces.
+
+Exercise 3
+	In Poker a "flush" is a hand that contains five or more cards of the same suit. A
+
+		hand can contain any number of cards.
+
+	1. Write a method called suitHist that takes an array of cards as a parameter and 
+
+		returns a histogram of the suits in the hand. Your solution should only 
+
+		traverse the array once.
+
+	Done, used enhanced for loop.
+
+	2. Write a method called hasFlush that takes an array of cards as a parameter and 
+
+		returns true if the hand contains a flush, and false if otherwise.
+
+	Noice.
+
+Exercise 4
+	Working with cards is more interesting if you can display them on the screen. As in
+
+		Appendix B, 2D graphics can be used for this purpose. In the code directory 
+
+		for this chapter, you will find:
+
+		-cardset-oxymoron: A directory containing images of playing cards.
+
+		-CardTable.java: a sample program that demonstrates how to read and display
+				images
+
+	This code demonstrates the use of a 2D array, specifically an array of images, the
+
+		declaration looks like this:
+
+
+		private Image[][] images;
+
+	The variable images refers to a 2D array of Image objects, which are defined in the
+
+		java.awt package. Here's the code that creates the array itself:
+
+
+		images = new Image[14][4];
+
+	The array has 14 rows (one for each rank plus an unused row for rank 0) and 4 
+
+		columns (one for each suit). Here's the loop that populates the array:
+
+
+		String cardset = "cardset-oxymoron";
+		String suits = "cdhs";
+
+		for (int suit = 0; suit <= 3; suit++) {
+			char c = suits.charAt(suit);
+
+			for (int rank = 1; rank <= 13; rank++) {
+				String s = String.format("%s/%02d%c.gif",
+							cardset, rank, c);
+				images[rank][suit] = new ImageIcon(s).getImage();
+			}
+		}
+
+	The variable cardset contains the name of the directory that contains the image 
+
+		files. suits is a string that contains the single-letter abbreviations for
+
+		the suits. These strings are used to assemble s, which contains the filename
+
+		for each image. For example, when rank=1 and suit=2, the value of s is
+
+		"cardset-oxymoron/01h.gif", which is an image of the Ace of Hearts.
+
+	The last line of the loop reads the image file, extracts an Image object, and 
+
+		assigns it to a location in the array, as specified by the indexes rank and 
+
+		suit. For example, the image of the Ace of Hearts is stored in row 1, column
+
+		2.
+
+	If you compile and run CardTable.java, you should see the images of a deck of cards
+
+		laid out on a green table. You can  use this class as a starting place to 
+
+		implement your own card games.
+
+	1. Start by implementing a method of the cards to be face up or down. 
+		(boolean array? Up is true?)
+
+	2. Next, write a method that will deal the cards out on the table one-by-one, face 
+
+		up, make sure it has the functionality of determining how many cards are 
+
+		dealt.
+
+	3. Tweak the previous method to be able to lie all and/or some of them face down.
+
+		Add the capability to determine which cards lie up and which lie down.
+
+	4. Implement a draw pile, with all cards not distributed "stacked" on top of each 
+
+		other, face down.
+
+	5. Write a method that will shuffle the deck. Test your deal method, and your draw
+
+		pile method.
+
+	6. Start with Solitare.
+
+		//If you're a fucking legend, make poker.
+
+	SHUFFLING ALGORITHMS IN NEXT CHAPTER
