@@ -1,0 +1,100 @@
+Chapter 13 Exercises
+
+Exercise 1
+	You can learn more about the sorting algorihtms in this chpater, and others at >http://www.sorting-algorithms.com/
+
+	This site includes explanations of the algorithms, animations that show how they 
+
+		work, and analysis of their efficiency.
+
+	Checked it out, also the youtube channel is really freaking cool to visualize them.
+
+Exercise 2
+	The goal of this exercise is to implement the shuffling algorithm from this chapter.
+
+	1. In the repository for this book, you should find a file called Deck.java that 
+		contains the code in this chapter. Check that you can compile it in your
+		environment.
+
+	Recreated in my own files.
+
+	2. Add a Deck method called randomInt that takes two integers, low and high, and 
+		returns a random integer between low and high, including both. You can use
+		the nextInt provided by java.util.Random from Ch8.7. However, avoid creating
+		a Random object everytime randomInt is invoked.
+
+	Done.
+
+	3. Write a method called swapCards that takes two indexes and swaps the cards at 
+		the given locations.
+
+	Frustrating, but done.
+
+	4. Write a method called shuffle that uses the algorithm from Ch13.2
+
+	Done, testing right now. It works!
+
+Exercise 3
+	The goal of this exercise is to implement the sorting algorithms from this chapter.
+
+		Use the Deck.java file from the previous exercise (or create a new one from
+
+		scratch).
+
+	1. Write a method called indexLowest that uses the compareCard method to find the 
+		lowest card in a given range of the deck (from lowIndex to highIndex, 
+		including both).
+
+	Done! Thought I was having some trouble but I just was comparing the card[i] to lowest placeholder in the 
+
+		wrong order for my expected result. (I swapped them round, but I could have just made it check for
+
+		a +1 as opposed to -1)
+
+	2. Write a method called selectionSort that implements the selection sort algorithm
+		from Ch13.3.
+
+	Actually pretty easy... I'm a lil shocked.
+
+	3. Using the pseudocode in Ch13.4, write the method called merge. The best way to
+		test it is to build and shuffle a deck. Then use subdeck to form two small
+		subdecks, and use selection sort to sort them. Then, you can pass the two 
+		halves to merge to see if it works.
+
+	The hardest part of this was remembering break; after one of the lil decks were empty.
+
+	4. Write the simple version of mergeSort, the one that divides the deck in half,
+		uses selectionSort to sort the two halves, and uses merge to create a new,
+		sorted deck.
+
+	I sort of had to do these last two at the same time. 
+
+	5. Write a recursive version of mergeSort. Remember that selectionSort is a 
+		modifier and mergeSort is a pure method, which means that they get invoked
+		differently:
+
+		deck.selectionSort();		// modifies an existing deck
+		deck = deck.mergeSort();	// replaces old deck with new
+
+	I completely failed this. In my implementation of just the Merge method, I totally neglected
+		the getCards(); method which allowed me to turn a deck into a card[]. Without a proper
+		Merge it's impossible to properly mergeSort.
+
+Exercise 4
+	The goal of this exercise is to practice top-down programming by implementing 
+
+		"insertion sort". Read about insertion sort using the link above. Write a 
+
+		method named insertionSort that implements this algorithm.
+
+	Fucked this one too. Just not feeling it for some reason.
+
+Exercise 5
+	Write a toString method for the Deck class. It should return a single string that
+
+		represents the cards in the deck. When it's printed, this string should 
+
+		display the same results as the print method in Ch13.1.
+
+	Remember: You can use the + operator to concatenate strings, but it's not very 
+		efficient. Consider using java.lang.StringBuilder. 
