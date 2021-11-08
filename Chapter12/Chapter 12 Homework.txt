@@ -126,6 +126,5 @@ Exercise 4
 
 	6. Start with Solitare.
 
-		//If you're a fucking legend, make poker.
 
 	SHUFFLING ALGORITHMS IN NEXT CHAPTER
