@@ -7,7 +7,10 @@ Welcome to our Group Project. We will be attempting to re-create a card game usi
 This repository is pretty empty at the moment, but here's a breakdown of what it does contain.
 
 JDK-13: a folder containing the reference code used in conjunction with https://greenteapress.com/thinkjava6/html/index.html
- Ch.12: self-explanatory
- Ch.13: self-explanatory 
- Cardset-Oxymoron: folder containing face images, backings, as well as shadows for a 52-count card deck that is consistent with the naming convention used by the arrays in Chapters 12 and 13.
+
+Ch.12: self-explanatory
+
+Ch.13: self-explanatory 
+
+Cardset-Oxymoron: folder containing face images, backings, as well as shadows for a 52-count card deck that is consistent with the naming convention used by the arrays in Chapters 12 and 13.
   
